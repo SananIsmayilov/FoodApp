@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navloginandregister"
+    app:startDestination="@id/loginandregisterprewiew">
+
+    <fragment
+        android:id="@+id/loginandregisterprewiew"
+        android:name="com.sananismayilov.finalproject.ui.Loginandregisterprewiew"
+        android:label="fragment_loginandregisterprewiew"
+        tools:layout="@layout/fragment_loginandregisterprewiew" >
+        <action
+            android:id="@+id/actionlogin"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/actionsignup"
+            app:destination="@id/signup" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="com.sananismayilov.finalproject.ui.fragments.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/actionsignuppage"
+            app:destination="@id/signup" />
+    </fragment>
+    <fragment
+        android:id="@+id/signup"
+        android:name="com.sananismayilov.finalproject.ui.fragments.Signup"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/actionloginpage"
+            app:destination="@id/login" />
+    </fragment>
+</navigation>

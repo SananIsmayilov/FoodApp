@@ -8,4 +8,6 @@ object Util {
     fun Navigation.getNav(view : View , id : Int){
         Navigation.findNavController(view).navigate(id)
     }
+
+    const val BASE_URL = ""
 }

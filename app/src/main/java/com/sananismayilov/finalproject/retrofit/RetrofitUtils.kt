@@ -1,5 +1,6 @@
 package com.sananismayilov.finalproject.retrofit
 
+import com.google.gson.GsonBuilder
 import com.sananismayilov.finalproject.util.Util.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -13,10 +14,11 @@ class RetrofitUtils {
 
         @Synchronized
         fun getInstance(): RetrofitApi {
+            val gson = GsonBuilder().setLenient().create()
             if (instance == null) {
                 instance = Retrofit.Builder()
                     .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create(gson))
                     .build()
                     .create(RetrofitApi::class.java)
 

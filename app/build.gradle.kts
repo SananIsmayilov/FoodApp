@@ -37,6 +37,10 @@ android {
     viewBinding {
         enable = true
     }
+
+    dataBinding {
+        enable = true
+    }
 }
 
 dependencies {
@@ -59,4 +63,11 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.google.code.gson:gson:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // viewmodel
+    implementation("androidx.lifecycle:lifecycle-viewmodel:2.5.1")
+    implementation("androidx.activity:activity-ktx:1.6.1")
+
+    //Glide
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
 }

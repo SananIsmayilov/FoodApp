@@ -1,4 +1,4 @@
-package com.sananismayilov.finalproject.ui
+package com.sananismayilov.finalproject.ui.activity
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

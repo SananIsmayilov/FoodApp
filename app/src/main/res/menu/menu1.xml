@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/homepage"
+        android:id="@+id/homeFragment2"
         android:icon="@drawable/home_fill1_wght400_grad0_opsz24"
         android:title="Əsas səhifə" />
     <item
-        android:id="@+id/fabicon"
-        android:enabled="false"
-        android:title="" />
+        android:id="@+id/cartFragment2"
+        android:icon="@drawable/shopingcart"
+        android:title="Səbət" />
     <item
-        android:id="@+id/profilepage"
+        android:id="@+id/profileFragment"
         android:icon="@drawable/menu_fill1_wght400_grad0_opsz24"
         android:title="Profil" />
 

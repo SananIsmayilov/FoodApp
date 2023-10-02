@@ -1,7 +1,11 @@
 package com.sananismayilov.finalproject.util
 
 import android.view.View
+import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import androidx.navigation.Navigation
+import com.bumptech.glide.Glide
+import com.sananismayilov.finalproject.R
 
 object Util {
 
@@ -9,5 +13,15 @@ object Util {
         Navigation.findNavController(view).navigate(id)
     }
 
-    const val BASE_URL = ""
+
+    fun ImageView.getImage(imagelink : String){
+        Glide
+            .with(this)
+            .load("$BASE_URL//FinalProject/foodimages/$imagelink")
+            .error(R.drawable.backfood)
+            .into(this)
+    }
+
+    const val BASE_URL = "https://sananismayilov.000webhostapp.com"
+    const val PrefName = "UserStatus"
 }

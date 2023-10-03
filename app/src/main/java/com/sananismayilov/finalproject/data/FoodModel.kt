@@ -1,6 +1,7 @@
 package com.sananismayilov.finalproject.data
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class FoodModel(
     @SerializedName("food_id")
@@ -18,4 +19,4 @@ data class FoodModel(
     @SerializedName("food_image")
     val food_image: String,
 
-    )
+    ) : Serializable

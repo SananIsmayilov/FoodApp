@@ -18,6 +18,9 @@
         <action
             android:id="@+id/actiondetail"
             app:destination="@id/detailFoodFragment" />
+        <action
+            android:id="@+id/actionfoodbottomsheet"
+            app:destination="@id/foodBottomSheetFragment2" />
     </fragment>
     <fragment
         android:id="@+id/cartFragment2"
@@ -35,4 +38,13 @@
             app:popUpTo="@id/detailFoodFragment"
             app:popUpToInclusive="true" />
     </fragment>
+    <dialog
+        android:id="@+id/foodBottomSheetFragment2"
+        android:name="com.sananismayilov.finalproject.ui.fragments.FoodBottomSheetFragment"
+        android:label="fragment_bottom_sheet"
+        tools:layout="@layout/fragment_bottom_sheet" >
+        <argument
+            android:name="food"
+            app:argType="com.sananismayilov.finalproject.data.FoodModel" />
+    </dialog>
 </navigation>

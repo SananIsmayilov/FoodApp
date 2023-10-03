@@ -7,7 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.sananismayilov.finalproject.R
 import com.sananismayilov.finalproject.adapter.DrinkAdapter
 import com.sananismayilov.finalproject.adapter.FoodAdapter
 import com.sananismayilov.finalproject.databinding.FragmentHomeBinding
@@ -33,6 +36,10 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+
+        binding.foodcategory.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.actiondetail)
+        }
 
         observeFood()
         return binding.root

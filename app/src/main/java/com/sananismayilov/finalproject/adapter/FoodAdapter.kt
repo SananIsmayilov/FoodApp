@@ -9,6 +9,7 @@ import com.sananismayilov.finalproject.data.FoodModel
 import com.sananismayilov.finalproject.data.FoodResponse
 import com.sananismayilov.finalproject.databinding.FoodrawBinding
 import com.sananismayilov.finalproject.databinding.FragmentHomeBinding
+import com.sananismayilov.finalproject.util.Util.BASE_URL
 import com.sananismayilov.finalproject.util.Util.getImage
 
 class FoodAdapter(val foodlist: List<FoodModel>) :
@@ -31,7 +32,7 @@ class FoodAdapter(val foodlist: List<FoodModel>) :
 
     override fun onBindViewHolder(holder: FoodHolder, position: Int) {
         holder.binding.food = foodlist[position]
-        holder.binding.foodimage.getImage(foodlist.get(position).food_image)
+        holder.binding.foodimage.getImage("$BASE_URL//FinalProject/foodimages/${foodlist.get(position).food_image}")
     }
 
 

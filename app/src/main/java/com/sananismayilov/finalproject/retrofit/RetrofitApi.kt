@@ -1,6 +1,7 @@
 package com.sananismayilov.finalproject.retrofit
 
 import com.sananismayilov.finalproject.data.CrudResponse
+import com.sananismayilov.finalproject.data.DrinkResponse
 import com.sananismayilov.finalproject.data.FoodResponse
 import retrofit2.Response
 import retrofit2.http.Field
@@ -32,6 +33,9 @@ interface RetrofitApi {
 
     @GET("/FinalProject/Foods/getFood.php")
     suspend fun getFood() : Response<FoodResponse>
+
+    @GET("/FinalProject/Drinks/getDrink.php")
+    suspend fun getDrink() : Response<DrinkResponse>
 
 
 }

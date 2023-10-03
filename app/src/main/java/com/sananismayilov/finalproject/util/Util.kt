@@ -17,7 +17,7 @@ object Util {
     fun ImageView.getImage(imagelink : String){
         Glide
             .with(this)
-            .load("$BASE_URL//FinalProject/foodimages/$imagelink")
+            .load(imagelink)
             .error(R.drawable.backfood)
             .into(this)
     }

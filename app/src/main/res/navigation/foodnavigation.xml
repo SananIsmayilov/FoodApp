@@ -20,7 +20,10 @@
             app:destination="@id/detailFoodFragment" />
         <action
             android:id="@+id/actionfoodbottomsheet"
-            app:destination="@id/foodBottomSheetFragment2" />
+            app:destination="@id/actiondetailtobottomsheet" />
+        <action
+            android:id="@+id/actiondrinkdetail"
+            app:destination="@id/detailDrinkFragment" />
     </fragment>
     <fragment
         android:id="@+id/cartFragment2"
@@ -37,9 +40,14 @@
             app:destination="@id/homeFragment2"
             app:popUpTo="@id/detailFoodFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_detailFoodFragment_to_foodBottomSheetFragment2"
+            app:destination="@id/actiondetailtobottomsheet"
+            app:popUpTo="@id/actiondetailtobottomsheet"
+            app:popUpToInclusive="true" />
     </fragment>
     <dialog
-        android:id="@+id/foodBottomSheetFragment2"
+        android:id="@+id/actiondetailtobottomsheet"
         android:name="com.sananismayilov.finalproject.ui.fragments.FoodBottomSheetFragment"
         android:label="fragment_bottom_sheet"
         tools:layout="@layout/fragment_bottom_sheet" >
@@ -47,4 +55,13 @@
             android:name="food"
             app:argType="com.sananismayilov.finalproject.data.FoodModel" />
     </dialog>
+    <fragment
+        android:id="@+id/detailDrinkFragment"
+        android:name="com.sananismayilov.finalproject.ui.fragments.DetailDrinkFragment"
+        android:label="fragment_detail_drink"
+        tools:layout="@layout/fragment_detail_drink" >
+        <action
+            android:id="@+id/actionhometodrinkdetail"
+            app:destination="@id/homeFragment2" />
+    </fragment>
 </navigation>

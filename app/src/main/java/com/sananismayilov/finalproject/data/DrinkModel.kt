@@ -1,6 +1,7 @@
 package com.sananismayilov.finalproject.data
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class DrinkModel(
     @SerializedName("drink_id")
@@ -18,5 +19,4 @@ data class DrinkModel(
     @SerializedName("drink_image")
     val drink_image: String
 
-
-)
+) : Serializable

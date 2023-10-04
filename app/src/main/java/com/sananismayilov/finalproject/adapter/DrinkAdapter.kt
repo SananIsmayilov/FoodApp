@@ -3,6 +3,7 @@ package com.sananismayilov.finalproject.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.sananismayilov.finalproject.R
 import com.sananismayilov.finalproject.data.DrinkModel
@@ -11,6 +12,8 @@ import com.sananismayilov.finalproject.data.FoodResponse
 import com.sananismayilov.finalproject.databinding.DrinkrawBinding
 import com.sananismayilov.finalproject.databinding.FoodrawBinding
 import com.sananismayilov.finalproject.databinding.FragmentHomeBinding
+import com.sananismayilov.finalproject.ui.fragments.DetailDrinkFragmentDirections
+import com.sananismayilov.finalproject.ui.fragments.HomeFragmentDirections
 import com.sananismayilov.finalproject.util.Util.BASE_URL
 import com.sananismayilov.finalproject.util.Util.getImage
 
@@ -35,6 +38,11 @@ class DrinkAdapter(val drinklist: List<DrinkModel>) :
     override fun onBindViewHolder(holder: DrinkHolder, position: Int) {
         holder.binding.drink = drinklist[position]
         holder.binding.drinkimage.getImage("$BASE_URL//FinalProject/drinkimages/${drinklist.get(position).drink_image}")
+
+        holder.binding.btnadddrink.setOnClickListener {
+            val action = HomeFragmentDirections.actionhometodrinkbottom(drinklist[position])
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 
 

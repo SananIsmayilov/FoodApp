@@ -40,9 +40,11 @@ class HomeFragment : Fragment() {
         binding.foodcategory.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.actiondetail)
         }
+
         binding.drinkcategory.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.actiondrinkdetail)
         }
+
 
         observeFood()
         return binding.root

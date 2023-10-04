@@ -24,6 +24,9 @@
         <action
             android:id="@+id/actiondrinkdetail"
             app:destination="@id/detailDrinkFragment" />
+        <action
+            android:id="@+id/actionhometodrinkbottom"
+            app:destination="@id/drinkBottomSheet" />
     </fragment>
     <fragment
         android:id="@+id/cartFragment2"
@@ -63,5 +66,17 @@
         <action
             android:id="@+id/actionhometodrinkdetail"
             app:destination="@id/homeFragment2" />
+        <action
+            android:id="@+id/actiondetailtobottom"
+            app:destination="@id/drinkBottomSheet" />
     </fragment>
+    <dialog
+        android:id="@+id/drinkBottomSheet"
+        android:name="com.sananismayilov.finalproject.ui.fragments.DrinkBottomSheet"
+        android:label="fragment_drink_bottom_sheet"
+        tools:layout="@layout/fragment_drink_bottom_sheet" >
+        <argument
+            android:name="Drink"
+            app:argType="com.sananismayilov.finalproject.data.DrinkModel" />
+    </dialog>
 </navigation>

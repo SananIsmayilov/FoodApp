@@ -2,6 +2,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs.kotlin")
+    id("kotlin-kapt")
+
 }
 
 android {
@@ -71,6 +73,12 @@ dependencies {
 
     //Glide
     implementation ("com.github.bumptech.glide:glide:4.16.0")
+
+    //Room
+    implementation ("androidx.room:room-runtime:2.6.0-rc01")
+    kapt("androidx.room:room-compiler:2.6.0-rc01")
+    implementation("androidx.room:room-ktx:2.5.2")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
 
 
 }

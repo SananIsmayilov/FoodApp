@@ -12,13 +12,20 @@ import androidx.databinding.DataBindingUtil
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.snackbar.Snackbar
 import com.sananismayilov.finalproject.R
+import com.sananismayilov.finalproject.data.CartModel
+import com.sananismayilov.finalproject.data.FoodModel
 import com.sananismayilov.finalproject.databinding.FragmentBottomSheetBinding
 import com.sananismayilov.finalproject.databinding.FragmentDetailFoodBinding
+import com.sananismayilov.finalproject.roomdatabase.ProductDatabase
 import com.sananismayilov.finalproject.util.Util
 import com.sananismayilov.finalproject.util.Util.getImage
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class FoodBottomSheetFragment : BottomSheetDialogFragment() {
     private lateinit var binding: FragmentBottomSheetBinding
+    private lateinit var foodModel: FoodModel
     private var count = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,18 +44,29 @@ class FoodBottomSheetFragment : BottomSheetDialogFragment() {
             val Food = FoodBottomSheetFragmentArgs.fromBundle(it).food
             binding.foodModel = Food
             binding.foodimagebottom.getImage("${Util.BASE_URL}//FinalProject/foodimages/${Food.food_image}")
+            foodModel = Food
         }
-
+        countFood()
         binding.addcartbottomsheet.setOnClickListener {
+            val cartModel =
+                CartModel(
+                    0,
+                    foodModel.food_name,
+                    foodModel.food_image,
+                    foodModel.food_sale,
+                    count
+                )
+            CoroutineScope(Dispatchers.IO).launch {
+                ProductDatabase(requireActivity()).getDao().insertProduct(cartModel)
+            }
             Snackbar.make(it, "Səbətə əlavə edildi", Snackbar.LENGTH_SHORT)
-                .setTextColor(Color.parseColor("#ff4f4f"))
                 .show()
 
         }
 
 
 
-        countFood()
+
         return binding.root
     }
 

@@ -11,14 +11,21 @@ import androidx.databinding.DataBindingUtil
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.snackbar.Snackbar
 import com.sananismayilov.finalproject.R
+import com.sananismayilov.finalproject.data.CartModel
+import com.sananismayilov.finalproject.data.DrinkModel
 import com.sananismayilov.finalproject.databinding.FragmentBottomSheetBinding
 import com.sananismayilov.finalproject.databinding.FragmentDetailFoodBinding
 import com.sananismayilov.finalproject.databinding.FragmentDrinkBottomSheetBinding
+import com.sananismayilov.finalproject.roomdatabase.ProductDatabase
 import com.sananismayilov.finalproject.util.Util
 import com.sananismayilov.finalproject.util.Util.getImage
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class DrinkBottomSheet : BottomSheetDialogFragment() {
     private lateinit var binding: FragmentDrinkBottomSheetBinding
+    private lateinit var drinkmodel: DrinkModel
     private var count = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,17 +39,34 @@ class DrinkBottomSheet : BottomSheetDialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_drink_bottom_sheet, container, false)
+            DataBindingUtil.inflate(
+                inflater,
+                R.layout.fragment_drink_bottom_sheet,
+                container,
+                false
+            )
         arguments?.let {
             val Drink = DrinkBottomSheetArgs.fromBundle(it).Drink
             binding.drinkModel = Drink
+            drinkmodel = Drink
             binding.drinkimagebottom.getImage("${Util.BASE_URL}//FinalProject/drinkimages/${Drink.drink_image}")
         }
 
         binding.addcartbottomsheet.setOnClickListener {
-            Snackbar.make(it,"Səbətə əlavə edildi",Snackbar.LENGTH_SHORT)
-                .setTextColor(Color.parseColor("#ff4f4f"))
+            val cartModel = CartModel(
+                0,
+                drinkmodel.drink_name,
+                drinkmodel.drink_image,
+                drinkmodel.drink_sale,
+                count
+            )
+            CoroutineScope(Dispatchers.IO).launch {
+                ProductDatabase(requireActivity()).getDao().insertProduct(cartModel)
+            }
+            Snackbar.make(it, "Səbətə əlavə edildi", Snackbar.LENGTH_SHORT)
                 .show()
+
+
         }
 
 

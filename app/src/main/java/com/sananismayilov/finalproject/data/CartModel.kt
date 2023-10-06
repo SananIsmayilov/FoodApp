@@ -21,6 +21,4 @@ data class CartModel(
     @ColumnInfo("product_count")
     val product_count: Int,
 
-
-
     )

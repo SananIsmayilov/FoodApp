@@ -56,7 +56,7 @@ class DrinkBottomSheet : BottomSheetDialogFragment() {
             val cartModel = CartModel(
                 0,
                 drinkmodel.drink_name,
-                drinkmodel.drink_image,
+                "${Util.BASE_URL}//FinalProject/drinkimages/${drinkmodel.drink_image}",
                 drinkmodel.drink_sale,
                 count
             )

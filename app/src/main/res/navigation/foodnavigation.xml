@@ -32,7 +32,13 @@
         android:id="@+id/cartFragment2"
         android:name="com.sananismayilov.finalproject.ui.fragments.CartFragment"
         android:label="fragment_cart"
-        tools:layout="@layout/fragment_cart" />
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/actionrepeat"
+            app:destination="@id/cartFragment2"
+            app:popUpTo="@id/cartFragment2"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/detailFoodFragment"
         android:name="com.sananismayilov.finalproject.ui.fragments.DetailFoodFragment"

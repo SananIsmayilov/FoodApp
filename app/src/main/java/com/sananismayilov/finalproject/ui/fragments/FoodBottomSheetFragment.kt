@@ -52,7 +52,7 @@ class FoodBottomSheetFragment : BottomSheetDialogFragment() {
                 CartModel(
                     0,
                     foodModel.food_name,
-                    foodModel.food_image,
+                    "${Util.BASE_URL}//FinalProject/foodimages/${foodModel.food_image}",
                     foodModel.food_sale,
                     count
                 )

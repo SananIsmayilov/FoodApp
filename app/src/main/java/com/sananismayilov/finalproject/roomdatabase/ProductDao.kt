@@ -17,4 +17,11 @@ interface ProductDao {
 
     @Delete
     suspend fun deleteProduct(cartModel: CartModel)
+
+    @Query("SELECT product_sale FROM CartModel")
+    fun getAllSales(): List<String>
+
+    @Query("SELECT product_count FROM CartModel")
+    fun getAllCount(): List<Int>
+
 }

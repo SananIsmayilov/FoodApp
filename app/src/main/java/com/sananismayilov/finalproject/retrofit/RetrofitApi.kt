@@ -26,16 +26,24 @@ interface RetrofitApi {
     @FormUrlEncoded
     @POST("/FinalProject/FinalProjectUsers/loginuser.php")
     suspend fun insertUserLogin(
-        @Field("user_email")  user_email1: String,
-        @Field("user_password") user_password1 : String
+        @Field("user_email") user_email1: String,
+        @Field("user_password") user_password1: String
     ): Response<CrudResponse>
 
 
     @GET("/FinalProject/Foods/getFood.php")
-    suspend fun getFood() : Response<FoodResponse>
+    suspend fun getFood(): Response<FoodResponse>
 
     @GET("/FinalProject/Drinks/getDrink.php")
-    suspend fun getDrink() : Response<DrinkResponse>
+    suspend fun getDrink(): Response<DrinkResponse>
+
+    @FormUrlEncoded
+    @POST("/FinalProject/Drinks/getSearchDrink.php")
+    suspend fun getSearchDrink(@Field("drink_name") drink_name: String): Response<DrinkResponse>
+
+    @FormUrlEncoded
+    @POST("/FinalProject/Foods/getSearchFood.php")
+    suspend fun getSearchFood(@Field("food_name") food_name: String): Response<FoodResponse>
 
 
 }

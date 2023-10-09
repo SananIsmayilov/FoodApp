@@ -22,4 +22,15 @@ class DetailFoodViewModel : ViewModel() {
         }
     }
 
+    fun getSearchFood(food_name : String) {
+        CoroutineScope(Dispatchers.Main).launch {
+            val response = RetrofitUtils.getInstance().getSearchFood(food_name)
+            if (response.isSuccessful) {
+                if (response.body()?.success == 1) {
+                    foodlist.value = response.body()
+                }
+            }
+        }
+    }
+
 }

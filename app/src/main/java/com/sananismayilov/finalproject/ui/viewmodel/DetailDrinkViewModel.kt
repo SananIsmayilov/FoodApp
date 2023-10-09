@@ -21,4 +21,16 @@ class DetailDrinkViewModel : ViewModel() {
             }
         }
     }
+
+    fun getsearchDrink(drink_name : String){
+        CoroutineScope(Dispatchers.Main).launch {
+            val response = RetrofitUtils.getInstance().getSearchDrink(drink_name)
+            if(response.isSuccessful){
+                if (response.body()?.success == 1){
+                    drinklist.value = response.body()
+                }
+            }
+        }
+    }
+
 }

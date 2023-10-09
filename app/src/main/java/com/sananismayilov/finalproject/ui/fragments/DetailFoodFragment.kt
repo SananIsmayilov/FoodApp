@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -39,6 +40,21 @@ class DetailFoodFragment : Fragment() {
             Navigation.findNavController(it).navigate(R.id.actionhome)
         }
 
+        binding.searchview.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                query?.let {
+                    searchFood(query)
+                }
+
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
+            }
+
+        })
+
         observeFood()
         return binding.root
     }
@@ -50,6 +66,10 @@ class DetailFoodFragment : Fragment() {
             adapter = DetailFoodAdapter(list)
             binding.fooddetailrecyc.adapter = adapter
         })
+    }
+
+    private fun searchFood(food_name: String) {
+        viewModel.getSearchFood(food_name)
     }
 
 

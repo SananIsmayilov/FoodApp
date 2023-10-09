@@ -27,7 +27,7 @@
         android:layout_marginTop="75dp"
         android:background="@drawable/searchviewback"
         android:backgroundTint="@color/white"
-        app:iconifiedByDefault="true"
+        app:iconifiedByDefault="false"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_height="45dp"/>

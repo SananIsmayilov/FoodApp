@@ -1,10 +1,12 @@
 package com.sananismayilov.finalproject.ui.fragments
 
+import android.location.GnssAntennaInfo.Listener
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
@@ -39,6 +41,20 @@ class DetailDrinkFragment : Fragment() {
             Navigation.findNavController(it).navigate(R.id.actionhometodrinkdetail)
         }
 
+        binding.searchviewdrink.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                query?.let {
+                    searchDrink(query)
+                }
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
+            }
+
+        })
+
 
         observeDrink()
 
@@ -57,6 +73,11 @@ class DetailDrinkFragment : Fragment() {
     override fun onResume() {
         viewModel.getDrink()
         super.onResume()
+    }
+
+
+    private fun searchDrink(drink_name: String) {
+        viewModel.getsearchDrink(drink_name)
     }
 
 

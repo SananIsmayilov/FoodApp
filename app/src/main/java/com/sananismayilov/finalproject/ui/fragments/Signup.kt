@@ -80,12 +80,11 @@ class Signup : Fragment() {
         viewmodel.signupstatus.observe(viewLifecycleOwner, Observer {
             if (!it) {
                 binding.signupanim.visibility = View.VISIBLE
-                binding.lnr1.visibility = View.VISIBLE
             } else {
                 binding.signupanim.visibility = View.GONE
                 val editor = sharedPreferences.edit()
                 editor.putBoolean("UserStatus", true).commit()
-                editor.putString("User_email",binding.editemail.text.toString()).commit()
+                editor.putString("User_email", binding.editemail.text.toString()).commit()
                 val intent = Intent(activity, FoodActivity::class.java)
                 startActivity(intent)
                 requireActivity().finish()

@@ -3,6 +3,7 @@ package com.sananismayilov.finalproject.retrofit
 import com.sananismayilov.finalproject.data.CrudResponse
 import com.sananismayilov.finalproject.data.DrinkResponse
 import com.sananismayilov.finalproject.data.FoodResponse
+import com.sananismayilov.finalproject.data.UserResponse
 import retrofit2.Response
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -44,6 +45,17 @@ interface RetrofitApi {
     @FormUrlEncoded
     @POST("/FinalProject/Foods/getSearchFood.php")
     suspend fun getSearchFood(@Field("food_name") food_name: String): Response<FoodResponse>
+
+    @FormUrlEncoded
+    @POST("/FinalProject/FinalProjectUsers/getProfile.php")
+    suspend fun getUser(@Field("user_email") user_email: String): Response<UserResponse>
+
+
+    @FormUrlEncoded
+    @POST("/FinalProject/FinalProjectUsers/deleteUser.php")
+    suspend fun deleteUser(
+        @Field("user_email") user_email1: String,
+    ): Response<CrudResponse>
 
 
 }

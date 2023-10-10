@@ -1,14 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/maincolor"
     tools:context=".ui.fragments.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:id="@+id/animprofile"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/profileanim" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:id="@+id/profileemail"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/white"
+            android:background = "@drawable/editback"
+            app:layout_constraintTop_toBottomOf="@id/animprofile"
+            android:layout_height="50dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/profileemail"
+            app:layout_constraintBottom_toTopOf="@id/profileemail"
+            android:text="Email"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_marginBottom="5dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginTop="40dp"
+            android:id="@+id/profilepassword"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/white"
+            android:background = "@drawable/editback"
+            app:layout_constraintTop_toBottomOf="@id/profileemail"
+            android:layout_height="50dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/profilepassword"
+            app:layout_constraintBottom_toTopOf="@id/profilepassword"
+            android:text="Parol"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_marginBottom="5dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginTop="40dp"
+            android:id="@+id/profilephonenumber"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:paddingLeft="10dp"
+            android:textColor="@color/white"
+            android:background = "@drawable/editback"
+            app:layout_constraintTop_toBottomOf="@id/profilepassword"
+            android:layout_height="50dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/profilephonenumber"
+            app:layout_constraintBottom_toTopOf="@id/profilephonenumber"
+            android:text="Telefon"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_marginBottom="5dp"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:id="@+id/profilechange"
+            android:backgroundTint="@android:color/transparent"
+            android:text="Dəyişiklikləri yadda saxla"
+            android:textSize="20sp"
+            android:textColor="@color/fabbackcolor"
+            app:layout_constraintTop_toBottomOf="@id/profilephonenumber"
+            android:layout_marginTop="50dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_height="50dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:id="@+id/profilelogout"
+            android:backgroundTint="@color/fabbackcolor"
+            android:text="Çıxış et"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/profilechange"
+            android:layout_marginTop="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_height="50dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:id="@+id/profileremove"
+            android:backgroundTint="@android:color/transparent"
+            android:text="Hesabı sil"
+            android:textSize="20sp"
+            android:textColor="@color/fabbackcolor"
+            app:layout_constraintTop_toBottomOf="@id/profilelogout"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_height="50dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

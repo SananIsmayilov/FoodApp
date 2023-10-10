@@ -63,11 +63,17 @@ class Login : Fragment() {
                 val intent = Intent(activity, FoodActivity::class.java)
                 startActivity(intent)
                 requireActivity().finish()
-            } else{
+            }
+        })
+
+        viewModel.loginloading.observe(viewLifecycleOwner, Observer {
+            if(it){
+                binding.loginanim.visibility = View.VISIBLE
+            }else{
                 binding.loginanim.setAnimation(R.raw.usernotfound)
-                binding.loginanim.scaleType = ImageView.ScaleType.FIT_CENTER
                 binding.loginanim.visibility = View.VISIBLE
             }
+
         })
     }
 

@@ -11,10 +11,11 @@ import kotlin.math.log
 
 class LoginViewModel : ViewModel() {
     val loginstatus = MutableLiveData<Boolean>()
+    val loginloading = MutableLiveData<Boolean>(false)
 
     fun login(user_email: String, user_password: String) {
+        loginloading.value = true
         try {
-
 
             CoroutineScope(Dispatchers.Main).launch {
                 val response =
@@ -22,12 +23,10 @@ class LoginViewModel : ViewModel() {
                 if (response.isSuccessful) {
                     if (response.body()?.success == 1) {
                         loginstatus.value = true
-
-
-                    } else {
-                        loginstatus.value = false
+                    }else{
+                        loginloading.value = false
                     }
-                    println("ResponsE   ${response.body()?.message.toString()}")
+
                 }
             }
         } catch (e: Exception) {

@@ -24,10 +24,10 @@
         android:layout_height="240dp"
         android:layout_gravity="center"
         android:layout_marginTop="35dp"
-        android:scaleType="center"
+        android:visibility="invisible"
         android:id="@+id/loginanim"
         app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/loginanim" />
+        app:lottie_rawRes="@raw/loginsearchanim" />
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"

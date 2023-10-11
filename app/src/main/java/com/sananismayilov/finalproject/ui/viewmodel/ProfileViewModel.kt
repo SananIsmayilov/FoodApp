@@ -32,7 +32,7 @@ class ProfileViewModel : ViewModel() {
     }
 
     fun deleteUser(user_email: String){
-        CoroutineScope(Dispatchers.IO).launch {
+        CoroutineScope(Dispatchers.Main).launch {
             val response = RetrofitUtils.getInstance().deleteUser(user_email)
             if (response.isSuccessful){
                 if (response.body()?.success == 1){

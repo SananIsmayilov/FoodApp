@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.sananismayilov.finalproject.databinding.ActivityLoginandRegisterBinding
 import com.sananismayilov.finalproject.util.Util.PrefName
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginandRegisterActivity : AppCompatActivity() {
     lateinit var binding: ActivityLoginandRegisterBinding
     private lateinit var sharedPreferences: SharedPreferences

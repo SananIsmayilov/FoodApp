@@ -17,8 +17,9 @@ import com.sananismayilov.finalproject.ui.activity.LoginandRegisterActivity
 import com.sananismayilov.finalproject.ui.activity.Loginandregisterprewiew
 import com.sananismayilov.finalproject.ui.viewmodel.ProfileViewModel
 import com.sananismayilov.finalproject.util.Util
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class ProfileFragment : Fragment() {
     private lateinit var binding: FragmentProfileBinding
     private lateinit var viewmodel: ProfileViewModel

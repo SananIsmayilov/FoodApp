@@ -1,15 +1,16 @@
 package com.sananismayilov.finalproject.ui.viewmodel
 
-import android.content.SharedPreferences
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.sananismayilov.finalproject.retrofit.RetrofitUtils
+import com.sananismayilov.finalproject.retrofit.RetrofitApi
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class SignUpViewmodel : ViewModel() {
+@HiltViewModel
+class SignUpViewmodel @Inject constructor(val retrofitApi: RetrofitApi): ViewModel() {
 
     val signupstatus = MutableLiveData<Boolean>(false)
 
@@ -24,7 +25,7 @@ class SignUpViewmodel : ViewModel() {
     ) {
         CoroutineScope(Dispatchers.Main).launch {
             try {
-                val response = RetrofitUtils.getInstance().insertUserssignUp(
+                val response = retrofitApi.insertUserssignUp(
                     user_name,
                     user_surname,
                     user_email,

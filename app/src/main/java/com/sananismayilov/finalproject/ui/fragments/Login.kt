@@ -16,8 +16,9 @@ import com.sananismayilov.finalproject.databinding.FragmentLoginBinding
 import com.sananismayilov.finalproject.ui.activity.FoodActivity
 import com.sananismayilov.finalproject.ui.viewmodel.LoginViewModel
 import com.sananismayilov.finalproject.util.Util.PrefName
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class Login : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     private lateinit var viewModel: LoginViewModel

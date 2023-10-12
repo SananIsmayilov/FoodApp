@@ -18,8 +18,10 @@ import com.sananismayilov.finalproject.databinding.FragmentDetailDrinkBinding
 import com.sananismayilov.finalproject.databinding.FragmentDetailFoodBinding
 import com.sananismayilov.finalproject.ui.viewmodel.DetailDrinkViewModel
 import com.sananismayilov.finalproject.ui.viewmodel.DetailFoodViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
 class DetailDrinkFragment : Fragment() {
     private lateinit var binding: FragmentDetailDrinkBinding
     private lateinit var viewModel: DetailDrinkViewModel

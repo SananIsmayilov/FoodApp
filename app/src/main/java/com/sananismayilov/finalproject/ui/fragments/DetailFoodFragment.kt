@@ -17,8 +17,10 @@ import com.sananismayilov.finalproject.R
 import com.sananismayilov.finalproject.adapter.DetailFoodAdapter
 import com.sananismayilov.finalproject.databinding.FragmentDetailFoodBinding
 import com.sananismayilov.finalproject.ui.viewmodel.DetailFoodViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
 class DetailFoodFragment : Fragment() {
     private lateinit var binding: FragmentDetailFoodBinding
     private lateinit var viewModel: DetailFoodViewModel

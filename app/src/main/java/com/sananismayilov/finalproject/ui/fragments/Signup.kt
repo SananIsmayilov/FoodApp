@@ -17,9 +17,10 @@ import com.sananismayilov.finalproject.ui.activity.FoodActivity
 import com.sananismayilov.finalproject.ui.viewmodel.SignUpViewmodel
 import com.sananismayilov.finalproject.util.Util.PrefName
 import com.sananismayilov.finalproject.util.Util.getNav
+import dagger.hilt.android.AndroidEntryPoint
 
-
-class Signup : Fragment() {
+@AndroidEntryPoint
+class Signup  : Fragment() {
     private lateinit var binding: FragmentSignupBinding
     private lateinit var viewmodel: SignUpViewmodel
     private lateinit var sharedPreferences: SharedPreferences

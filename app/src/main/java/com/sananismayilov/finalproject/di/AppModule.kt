@@ -1,7 +1,6 @@
 package com.sananismayilov.finalproject.di
 
 import com.sananismayilov.finalproject.retrofit.RetrofitApi
-import com.sananismayilov.finalproject.retrofit.RetrofitUtils
 import com.sananismayilov.finalproject.util.Util
 import dagger.Module
 import dagger.Provides

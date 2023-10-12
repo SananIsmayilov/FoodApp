@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import com.sananismayilov.finalproject.data.DrinkResponse
 import com.sananismayilov.finalproject.data.FoodResponse
 import com.sananismayilov.finalproject.retrofit.RetrofitApi
-import com.sananismayilov.finalproject.retrofit.RetrofitUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

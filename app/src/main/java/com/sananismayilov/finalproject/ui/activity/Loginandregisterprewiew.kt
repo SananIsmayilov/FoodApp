@@ -9,7 +9,9 @@ import androidx.navigation.Navigation
 import com.sananismayilov.finalproject.R
 import com.sananismayilov.finalproject.databinding.FragmentLoginandregisterprewiewBinding
 import com.sananismayilov.finalproject.util.Util.getNav
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class Loginandregisterprewiew : Fragment() {
     private lateinit var binding: FragmentLoginandregisterprewiewBinding
     override fun onCreate(savedInstanceState: Bundle?) {

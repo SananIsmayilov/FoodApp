@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
@@ -15,8 +16,9 @@ import com.sananismayilov.finalproject.adapter.DrinkAdapter
 import com.sananismayilov.finalproject.adapter.FoodAdapter
 import com.sananismayilov.finalproject.databinding.FragmentHomeBinding
 import com.sananismayilov.finalproject.ui.viewmodel.HomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
     lateinit var viewModel: HomeViewModel

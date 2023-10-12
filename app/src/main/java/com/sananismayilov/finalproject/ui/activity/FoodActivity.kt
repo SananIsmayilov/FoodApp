@@ -15,6 +15,9 @@ import com.sananismayilov.finalproject.R
 import com.sananismayilov.finalproject.databinding.ActivityFoodBinding
 import com.sananismayilov.finalproject.retrofit.RetrofitUtils
 import com.sananismayilov.finalproject.ui.fragments.CartFragment
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
 
 class FoodActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFoodBinding

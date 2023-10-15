@@ -20,7 +20,8 @@
   ### Signup page <br/>
   !["img1](https://github.com/SananIsmayilov/FoodApp/blob/master/ScreenShots/Screenshot_register%20(Custom).png)<br/>
   ### Login page <br/>
-  !["img1](https://github.com/SananIsmayilov/FoodApp/blob/master/ScreenShots/Screenshot_login%20(Custom).png)<br/> ### Login page  <br/>
+  !["img1](https://github.com/SananIsmayilov/FoodApp/blob/master/ScreenShots/Screenshot_login%20(Custom).png)<br/> 
+  ### Login page  <br/>
   !["img1](https://github.com/SananIsmayilov/FoodApp/blob/master/ScreenShots/Screenshot_notuser%20(Custom).png)<br/>
   ### Main page   <br/>
   !["img1](https://github.com/SananIsmayilov/FoodApp/blob/master/ScreenShots/Screenshot_main1%20(Custom).png)<br/>
